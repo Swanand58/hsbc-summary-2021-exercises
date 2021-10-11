@@ -33,33 +33,15 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 	@Override
 	public void updateSalary(int id, double salary) throws EmployeeNotFoundException{
-		Employee[] temp = dao.findAllEmployees();
-		Employee employee = null;
-		for(Employee e: temp) {
-			if(e.getId() == id) {
-				employee = e;
-				employee.setSalary(salary);
-			}
-		}
-		if(employee == null) {
-			throw new EmployeeNotFoundException("Sorry employee with an id " +id+" not found");
-		}
+		Employee employee = findEmployee(id);
+		employee.setSalary(salary);
 		dao.updateEmployee(id, employee);
 	}
 
 	@Override
 	public void updateName(int id, String name) throws EmployeeNotFoundException{
-		Employee[] temp = dao.findAllEmployees();
-		Employee employee = null;
-		for(Employee e: temp) {
-			if(e.getId() == id) {
-				employee = e;
-				employee.setName(name);;
-			}
-		}
-		if(employee == null) {
-			throw new EmployeeNotFoundException("Sorry employee with an id " +id+" not found");
-		}
+		Employee employee = findEmployee(id);
+		employee.setName(name);
 		dao.updateEmployee(id, employee);
 	}
 

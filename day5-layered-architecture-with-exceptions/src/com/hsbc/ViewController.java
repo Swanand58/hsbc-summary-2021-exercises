@@ -56,10 +56,11 @@ public class ViewController {
 				String name = scan.next();
 				try {
 					service.updateName(nameId, name);
+					System.out.println("Employee Details Updated!");
 				} catch (EmployeeNotFoundException e1) {
 					System.err.println(e1.getMessage());
 				}
-				System.out.println("Employee Details Updated!");
+				
 				break;
 			case 5: 
 				System.out.println("Enter the id of the Employee for which you want to change the Salary:");
@@ -68,10 +69,11 @@ public class ViewController {
 				double salary = scan.nextDouble();
 				try {
 					service.updateSalary(salaryId, salary);
+					System.out.println("Employee Details Updated!");
 				} catch (EmployeeNotFoundException e1) {
 					System.err.println(e1.getMessage());
 				}
-				System.out.println("Employee Details Updated!");
+				
 				break;
 			}
 		} while(controllerOption != 0);

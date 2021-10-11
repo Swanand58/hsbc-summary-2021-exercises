@@ -34,6 +34,7 @@ public class EmployeeDaoArrayImpl implements EmployeeDao {
 		for(Employee e: temp) {
 			if(e.getId() == id) {
 				e = employee;
+				break;
 			}
 		}
 	}
