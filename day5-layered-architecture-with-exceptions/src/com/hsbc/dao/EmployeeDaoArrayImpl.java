@@ -7,7 +7,7 @@ public class EmployeeDaoArrayImpl implements EmployeeDao {
 	private static Employee[] employeeDb = new Employee[10];
 	private static int arrayIndexCounter = 0;
 	@Override
-	public void save(Employee employee) {
+	public void save(Employee employee){
 		employeeDb[arrayIndexCounter] = employee;
 		arrayIndexCounter++;
 	}
