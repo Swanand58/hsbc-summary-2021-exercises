@@ -38,7 +38,7 @@ public class EmployeeDaoTreeSetimpl implements EmployeeDao{
 	@Override
 	public void updateEmployee(int id, Employee employee) {
 		for(Employee e: employeeSet) {
-			if(employeeSet.contains(e.getId() == id)){
+			if(e.getId() == id){
 				employeeSet.remove(e);
 				employeeSet.add(employee);
 			}

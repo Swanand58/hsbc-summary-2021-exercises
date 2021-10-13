@@ -39,10 +39,14 @@ public class EmployeeDaoArrayListImpl implements EmployeeDao{
 	@Override
 	public void updateEmployee(int id, Employee employee) {
 		
-		for(int i = 0; i <= employeeList.size(); i++) {
-			if(employeeList.get(i).getId() == id) {
+
+		int i = 0;	
+		for(Employee e: employeeList) {
+			if(e.getId() == id) {
 				employeeList.set(i, employee);
 			}
+			i++;
+
 		}
 		
 		 
